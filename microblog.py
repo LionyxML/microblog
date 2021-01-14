@@ -1,3 +1,9 @@
-from app import app  #imports app variable from the app package
+from app import app, db  #imports app variable from the app package, then db var
+from app.models import User, Post
+
+
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Post': Post}
 
 
