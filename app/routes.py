@@ -1,4 +1,3 @@
-''' Aqui estão as views '''
 from flask import render_template, flash, redirect, url_for
 from app import app
 from app.forms import LoginForm
@@ -96,7 +95,7 @@ def before_request():
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
