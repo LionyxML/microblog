@@ -1,4 +1,3 @@
-#microblog
+# microblog
 
-Still under development... :)
-
+Not to be used, still under development... :)
