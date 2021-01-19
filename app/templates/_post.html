@@ -9,7 +9,8 @@
 
           {{ post.author.username }}</a> </span>
 
-          said:<br><span>{{ post.body }}</span><br><br>
+          said {{ moment(post.timestamp).fromNow() }}
+          <br><span>{{ post.body }}</span><br><br>
         </td>
       </tr>
 </table>
