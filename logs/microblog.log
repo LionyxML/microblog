@@ -1,4 +1,4 @@
-2021-01-15 16:31:29,908 ERROR: Exception on /edit_profile [POST] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 11:25:28,973 ERROR: Exception on /user/rmj [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,19 +14,23 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 99, in edit_profile
-    if form.validate_on_submit():
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/form.py", line 318, in validate
-    return super(Form, self).validate(extra)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/form.py", line 150, in validate
-    if not field.validate(self, extra):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/fields/core.py", line 226, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/fields/core.py", line 246, in _run_validation_chain
-    validator(form, self)
-  File "/Users/rmj/github/microblog/app/forms.py", line 43, in validate_username
-    raise ValidationError('Please use a different name')
-NameError: name 'ValidationError' is not defined
-2021-01-15 16:32:13,952 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+  File "/Users/rmj/github/microblog/app/routes.py", line 90, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 36, in top-level template code
+    {% block content %}{% endblock%}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 24, in block "content"
+    {{ form_submit(value='Unfollow') }}
+jinja2.exceptions.UndefinedError: 'form_submit' is undefined
+2021-01-19 11:26:36,591 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
