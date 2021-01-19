@@ -1,14 +1,4 @@
-2021-01-15 16:20:02,052 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
-2021-01-15 16:20:10,750 ERROR: Exception on /edit_profile [POST] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    cursor, statement, parameters, context
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 609, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
+2021-01-19 14:49:53,205 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -24,56 +14,26 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 102, in edit_profile
-    db.session.commit()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 163, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1046, in commit
-    self.transaction.commit()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 504, in commit
-    self._prepare_impl()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 483, in _prepare_impl
-    self.session.flush()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2540, in flush
-    self._flush(objects)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2682, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    with_traceback=exc_tb,
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
-    raise exception
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2642, in _flush
-    flush_context.execute()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
-    uow,
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
-    update,
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 995, in _emit_update_statements
-    statement, multiparams
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1011, in execute
-    return meth(self, multiparams, params)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1130, in _execute_clauseelement
-    distilled_params,
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1317, in _execute_context
-    e, statement, parameters, cursor, context
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1511, in _handle_dbapi_exception
-    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
-    raise exception
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1277, in _execute_context
-    cursor, statement, parameters, context
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 609, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('susan', 'Cool dev guy :D !!!', 2)]
-(Background on this error at: http://sqlalche.me/e/13/gkpj)
-2021-01-15 16:29:14,542 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
-2021-01-15 16:29:38,375 ERROR: Exception on /edit_profile [POST] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/rmj/github/microblog/app/routes.py", line 110, in user
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
+    {% block content %}{% endblock%}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 34, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2021-01-19 14:50:00,247 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:50:02,072 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -89,19 +49,59 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 99, in edit_profile
-    if form.validate_on_submit():
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
-    return self.is_submitted() and self.validate()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/form.py", line 318, in validate
-    return super(Form, self).validate(extra)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/form.py", line 150, in validate
-    if not field.validate(self, extra):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/fields/core.py", line 226, in validate
-    stop_validation = self._run_validation_chain(form, chain)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/wtforms/fields/core.py", line 246, in _run_validation_chain
-    validator(form, self)
-  File "/Users/rmj/github/microblog/app/forms.py", line 38, in validate_username
-    if username.data != self.original_username:
-AttributeError: 'EditProfileForm' object has no attribute 'original_username'
-2021-01-15 16:31:16,914 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
+    return render_template('user.html', user=user, posts=posts, form=form, prev_url=prev_url, next_url=next_url)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
+    {% block content %}{% endblock%}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 34, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2021-01-19 14:50:34,668 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
+    return render_template('user.html', user=user, posts=posts, form=form, prev_url=prev_url, next_url=next_url)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
+    {% block content %}{% endblock%}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 34, in block "content"
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2021-01-19 14:51:11,985 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:52:23,953 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]

@@ -1,4 +1,4 @@
-2021-01-19 11:17:18,526 ERROR: Exception on /user/rmj [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 15:20:26,968 ERROR: Exception on /login [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 90, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/rmj/github/microblog/app/routes.py", line 70, in login
+    return render_template('login.html', title='Sign In', form=form)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
@@ -26,12 +24,12 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+  File "/Users/rmj/github/microblog/app/templates/login.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/Users/rmj/github/microblog/app/templates/base.html", line 36, in top-level template code
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
     {% block content %}{% endblock%}
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 22, in block "content"
-    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+  File "/Users/rmj/github/microblog/app/templates/login.html", line 25, in block "content"
+    <p>Forgot your password? <a href="{{ url_for('reset_password_request')}}"> Click to reset it!</a></p>
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
@@ -42,8 +40,8 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'unfollow' with values ['username']. Did you mean 'follow' instead?
-2021-01-19 11:17:19,969 ERROR: Exception on /user/rmj [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
+2021-01-19 15:20:28,647 ERROR: Exception on /login [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -57,10 +55,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 90, in user
-    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/rmj/github/microblog/app/routes.py", line 70, in login
+    return render_template('login.html', title='Sign In', form=form)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
@@ -71,12 +67,12 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+  File "/Users/rmj/github/microblog/app/templates/login.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "/Users/rmj/github/microblog/app/templates/base.html", line 36, in top-level template code
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
     {% block content %}{% endblock%}
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 22, in block "content"
-    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+  File "/Users/rmj/github/microblog/app/templates/login.html", line 25, in block "content"
+    <p>Forgot your password? <a href="{{ url_for('reset_password_request')}}"> Click to reset it!</a></p>
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2216, in handle_url_build_error
@@ -87,5 +83,4 @@ Traceback (most recent call last):
     endpoint, values, method=method, force_external=external
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/werkzeug/routing.py", line 2179, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'unfollow' with values ['username']. Did you mean 'follow' instead?
-2021-01-19 11:25:14,310 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
