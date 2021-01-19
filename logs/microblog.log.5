@@ -1,4 +1,28 @@
-2021-01-19 14:52:30,061 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 13:56:37,451 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:08:37,545 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:09:16,046 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 747, in __getattr__
+    return getattr(self.comparator, key)
+AttributeError: 'Comparator' object has no attribute 'dec'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 236, in __getattr__
+    return getattr(self.comparator, key)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 987, in __getattr__
+    return self._fallback_getattr(key)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/properties.py", line 364, in _fallback_getattr
+    return getattr(self.__clause_element__(), key)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 758, in __getattr__
+    replace_context=err,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+AttributeError: Neither 'AnnotatedColumn' object nor 'Comparator' object has an attribute 'dec'
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,27 +38,17 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
-    return render_template('user.html', user=user, posts=posts, form=form, prev_url=prev_url, next_url=next_url)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/rmj/github/microblog/app/templates/base.html", line 37, in top-level template code
-    {% block content %}{% endblock%}
-  File "/Users/rmj/github/microblog/app/templates/user.html", line 33, in block "content"
-    {% for post in posts %}
-TypeError: 'Pagination' object is not iterable
-2021-01-19 14:53:36,648 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
-2021-01-19 14:53:40,503 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/rmj/github/microblog/app/routes.py", line 176, in explore
+    posts = Post.query.order_by(Post.timestamp.dec()).all()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/orm/attributes.py", line 249, in __getattr__
+    replace_context=err,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 182, in raise_
+    raise exception
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Post.timestamp has an attribute 'dec'
+2021-01-19 14:10:36,077 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:18:01,843 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:20:59,430 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+2021-01-19 14:21:00,646 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -50,10 +64,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
-    return render_template('user.html', user=user, posts=posts.item, form=form, prev_url=prev_url, next_url=next_url)
-AttributeError: 'Pagination' object has no attribute 'item'
-2021-01-19 14:54:58,402 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/rmj/github/microblog/app/routes.py", line 180, in explore
+    page, app.config('POSTS_PER_PAGE'), False)
+TypeError: 'Config' object is not callable
+2021-01-19 14:21:03,532 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -69,10 +83,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
-    return render_template('user.html', user=user, posts=posts.item, form=form, prev_url=prev_url, next_url=next_url)
-AttributeError: 'Pagination' object has no attribute 'item'
-2021-01-19 14:55:02,225 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/rmj/github/microblog/app/routes.py", line 180, in explore
+    page, app.config('POSTS_PER_PAGE'), False)
+TypeError: 'Config' object is not callable
+2021-01-19 14:21:05,493 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -88,10 +102,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
-    return render_template('user.html', user=user, posts=posts.item, form=form, prev_url=prev_url, next_url=next_url)
-AttributeError: 'Pagination' object has no attribute 'item'
-2021-01-19 14:56:17,949 ERROR: Exception on /user/ba [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Users/rmj/github/microblog/app/routes.py", line 180, in explore
+    page, app.config('POSTS_PER_PAGE'), False)
+TypeError: 'Config' object is not callable
+2021-01-19 14:21:55,690 ERROR: Exception on /explore [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -107,7 +121,6 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/rmj/github/microblog/app/routes.py", line 109, in user
-    return render_template('user.html', user=user, posts=posts.items, form=form, prev_url=prev_url, next_url=next_url)
-AttributeError: 'Pagination' object has no attribute 'item'
-2021-01-19 14:56:24,708 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:58]
+  File "/Users/rmj/github/microblog/app/routes.py", line 180, in explore
+    page, app.config['POSTS_PER_PAGE'], False)
+TypeError: 'Config' object is not callable
