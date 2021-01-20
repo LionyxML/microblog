@@ -1,74 +1,4 @@
-2021-01-19 16:16:31,293 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 217, in reset_password_request
-    form=form)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/rmj/github/microblog/app/templates/reset_password_request.html", line 13, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2021-01-19 16:16:34,917 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 217, in reset_password_request
-    form=form)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
-    code = environment.compile(source, name, filename)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
-    self.handle_exception(source=source_hint)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "/Users/rmj/github/microblog/app/templates/reset_password_request.html", line 13, in template
-    {% endfor %}
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
-2021-01-19 16:17:10,850 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 16:19:32,193 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -103,3 +33,77 @@ Traceback (most recent call last):
   File "/Users/rmj/github/microblog/app/templates/reset_password_request.html", line 13, in template
     {% endfor %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2021-01-19 16:21:50,636 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rmj/github/microblog/app/routes.py", line 217, in reset_password_request
+    title='Reset Password',
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/reset_password_request.html", line 13, in template
+    {% end for %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'end'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2021-01-19 16:21:55,294 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 16:25:12,801 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 16:27:30,550 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 16:27:34,697 ERROR: Exception on /reset_password_request [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rmj/github/microblog/app/routes.py", line 218, in reset_password_request
+    form=form)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/reset_password_request.html", line 13, in template
+    {% end for %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'end'. Jinja was looking for the following tags: 'endfor' or 'else'. The innermost block that needs to be closed is 'for'.
+2021-01-19 16:29:13,043 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]

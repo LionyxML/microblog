@@ -1,5 +1,5 @@
 FLASK_APP=microblog.py
-FLASK_DEBUG=0
+FLASK_DEBUG=1
 
 # For e-mail support:
 # Run an e-mail server on separeted shell
