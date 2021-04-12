@@ -2,7 +2,13 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Sign In') }}</h1>
+    <div class="row">
+      <div class="col-md-4">
+      <h1>{{ _('Welcome to yet another microblog!') }}</h1>
+      <p>{{ _('Only fooling around? Try "visitante" for both username and password') }}</p>
+      </div>
+    </div>
+    <h2>{{ _('Sign In') }}</h2>
     <div class="row">
         <div class="col-md-4">
             {{ wtf.quick_form(form) }}

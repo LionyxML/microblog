@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-12 18:56-0300\n"
+"POT-Creation-Date: 2021-04-12 20:06-0300\n"
 "PO-Revision-Date: 2021-04-12 18:57-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -38,7 +38,7 @@ msgstr "Senha"
 msgid "Remember Me"
 msgstr "Lembrar"
 
-#: app/forms.py:14 app/routes.py:82 app/templates/login.html:5
+#: app/forms.py:14 app/routes.py:82 app/templates/login.html:11
 msgid "Sign In"
 msgstr "Entrar"
 
@@ -100,7 +100,9 @@ msgstr "Parabéns, você agora é um usuário registrado!"
 
 #: app/routes.py:116
 msgid "Check your email for the instructions to reset your password"
-msgstr "Verifique seu e-mail para instruções de como resetar sua senha! Procure também no SPAM!"
+msgstr ""
+"Verifique seu e-mail para instruções de como resetar sua senha! Procure "
+"também no SPAM!"
 
 #: app/routes.py:119 app/templates/reset_password_request.html:5
 msgid "Reset Password"
@@ -207,19 +209,27 @@ msgstr "Mais novas"
 msgid "Older posts"
 msgstr "Mais antigas"
 
-#: app/templates/login.html:12
+#: app/templates/login.html:7
+msgid "Welcome to yet another microblog!"
+msgstr "Bem-vindo ao microblog do Rahul!"
+
+#: app/templates/login.html:8
+msgid "Only fooling around? Try \"visitante\" for both username and password"
+msgstr "Somente dando uma olhada? Utilize \"visitante\" como usuário e senha"
+
+#: app/templates/login.html:18
 msgid "New User?"
 msgstr "Novo usuário?"
 
-#: app/templates/login.html:12
+#: app/templates/login.html:18
 msgid "Click to Register!"
 msgstr "Clique aqui para registrar!"
 
-#: app/templates/login.html:14
+#: app/templates/login.html:20
 msgid "Forgot Your Password?"
 msgstr "Esqueceu sua senha?"
 
-#: app/templates/login.html:15
+#: app/templates/login.html:21
 msgid "Click to Reset It"
 msgstr "Clique para solicitar uma nova!"
 

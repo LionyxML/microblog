@@ -1,57 +1,4 @@
-2021-01-19 16:29:22,868 ERROR: Exception on /reset_password_request [POST] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 211, in reset_password_request
-    send_password_reset_email(user)
-  File "/Users/rmj/github/microblog/app/email.py", line 14, in send_password_reset_email
-    sender=app.config['ADMINS'][0],
-NameError: name 'app' is not defined
-2021-01-19 16:30:57,762 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
-2021-01-19 16:31:06,302 ERROR: Exception on /reset_password_request [POST] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 211, in reset_password_request
-    send_password_reset_email(user)
-  File "/Users/rmj/github/microblog/app/email.py", line 20, in send_password_reset_email
-    user=user, token=token),
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/loaders.py", line 115, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 60, in get_source
-    return self._get_source_fast(environment, template)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: email/reset_password.txt
-2021-01-19 16:32:02,520 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 16:37:12,884 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,7 +15,7 @@ Traceback (most recent call last):
   File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
     user = User.verify_reset_password_token(token)
 TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:32:10,887 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 16:38:36,666 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -85,7 +32,7 @@ Traceback (most recent call last):
   File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
     user = User.verify_reset_password_token(token)
 TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:37:05,054 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 16:39:26,118 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -102,3 +49,54 @@ Traceback (most recent call last):
   File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
     user = User.verify_reset_password_token(token)
 TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
+2021-01-19 16:40:41,540 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
+    user = User.verify_reset_password_token(token)
+TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
+2021-01-19 16:41:21,188 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
+    user = User.verify_reset_password_token(token)
+TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
+2021-01-19 16:43:22,631 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 16:56:16,764 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 16:57:11,196 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
+2021-01-19 17:42:45,223 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 17:44:28,933 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 17:52:44,296 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 17:53:17,314 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 17:58:10,515 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 17:59:27,128 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:00:27,195 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:02:52,914 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:06:44,825 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:12:45,092 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:13:44,093 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:14:19,428 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:25:06,800 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:26:16,733 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]

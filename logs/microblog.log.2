@@ -1,4 +1,4 @@
-2021-01-19 16:37:12,884 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+2021-01-19 18:26:18,330 ERROR: Exception on /user/rmj [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,10 +12,38 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
-    user = User.verify_reset_password_token(token)
-TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:38:36,666 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rmj/github/microblog/app/routes.py", line 112, in user
+    return render_template('user.html', user=user, posts=posts.items, form=form, prev_url=prev_url, next_url=next_url)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 4, in top-level template code
+    {% if title %}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 55, in block "content"
+    {% block app_content %} {% endblock %}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 41, in block "app_content"
+    <span aria-hidden="true">&larr;</span> {{ _('Newer posts') }}
+jinja2.exceptions.UndefinedError: '_' is undefined
+2021-01-19 18:26:38,576 ERROR: Exception on /user/rmj [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -29,74 +57,39 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
-    user = User.verify_reset_password_token(token)
-TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:39:26,118 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
-    user = User.verify_reset_password_token(token)
-TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:40:41,540 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1MzAxLjYzMjc4OX0.Be6SJbJSE_iIEs_Ny3UHZsPSe9xX933Zr93Kyi-UvAg [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
-    user = User.verify_reset_password_token(token)
-TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:41:21,188 ERROR: Exception on /reset_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6MSwiZXhwIjoxNjExMDg1Njk4LjE4Mjk2OX0.MSHXxBKooMzBxIw5rijKs8UQWv116Wl6CrWKZPLV01A [GET] [in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py:1892]
-Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rmj/github/microblog/app/routes.py", line 226, in reset_password
-    user = User.verify_reset_password_token(token)
-TypeError: verify_reset_password_token() missing 1 required positional argument: 'token'
-2021-01-19 16:43:22,631 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
-2021-01-19 16:56:16,764 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
-2021-01-19 16:57:11,196 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:61]
-2021-01-19 17:42:45,223 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 17:44:28,933 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 17:52:44,296 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 17:53:17,314 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 17:58:10,515 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 17:59:27,128 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:00:27,195 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:02:52,914 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:06:44,825 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:12:45,092 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:13:44,093 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:14:19,428 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:25:06,800 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
-2021-01-19 18:26:16,733 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rmj/github/microblog/app/routes.py", line 112, in user
+    return render_template('user.html', user=user, posts=posts.items, form=form, prev_url=prev_url, next_url=next_url)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 4, in top-level template code
+    {% if title %}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/rmj/github/microblog/app/templates/base.html", line 55, in block "content"
+    {% block app_content %} {% endblock %}
+  File "/Users/rmj/github/microblog/app/templates/user.html", line 41, in block "app_content"
+    <span aria-hidden="true">&larr;</span> Newer Posts
+jinja2.exceptions.UndefinedError: '_' is undefined
+2021-01-19 18:26:42,420 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 18:43:52,657 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:65]
+2021-01-19 19:06:57,629 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:69]
+2021-01-19 19:08:27,974 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:69]
+2021-01-20 13:16:08,982 INFO: Microblog startup [in /Users/rmj/github/microblog/app/__init__.py:71]
