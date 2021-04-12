@@ -1,7 +1,7 @@
-# Spanish translations for PROJECT.
-# Copyright (C) 2017 ORGANIZATION
+# Portuguese translations for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 msgid ""
 msgstr ""
