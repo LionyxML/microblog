@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-12 20:06-0300\n"
+"POT-Creation-Date: 2021-04-26 15:42-0300\n"
 "PO-Revision-Date: 2021-04-12 18:57-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -145,11 +145,11 @@ msgstr "Você não está seguindo %(username)s."
 
 #: app/translate.py:9
 msgid "Error: the translation service is not configured"
-msgstr "Error: o serviço de traduzão não está disponível"
+msgstr "Erro: o serviço de tradução não está disponível"
 
 #: app/translate.py:22
 msgid "Error: the translation service failed."
-msgstr "Error: o serviço de traduzão não está disponível"
+msgstr "Erro: o serviço de tradução não está disponível"
 
 #: app/templates/404.html:4
 msgid "Not Found"
@@ -165,7 +165,7 @@ msgstr "Um erro inesperado ocorreu"
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr "O administrador foi notificado. Desculpe-nos pela inconveniencia!"
+msgstr "O administrador foi notificado. Desculpe-nos pela inconveniência!"
 
 #: app/templates/_post.html:14
 #, python-format
@@ -214,8 +214,8 @@ msgid "Welcome to yet another microblog!"
 msgstr "Bem-vindo ao microblog do Rahul!"
 
 #: app/templates/login.html:8
-msgid "Only fooling around? Try \"visitante\" for both username and password"
-msgstr "Somente dando uma olhada? Utilize \"visitante\" como usuário e senha"
+msgid "Only a quick registration needed!"
+msgstr "Só precisamos de um registro rápido!"
 
 #: app/templates/login.html:18
 msgid "New User?"
@@ -266,3 +266,6 @@ msgstr "Seguir"
 #: app/templates/user.html:27
 msgid "Unfollow"
 msgstr "Deixar de Seguir"
+
+#~ msgid "Only fooling around? Try \"visitante\" for both username and password"
+#~ msgstr "Somente dando uma olhada? Utilize \"visitante\" como usuário e senha"

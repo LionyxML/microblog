@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-12 20:06-0300\n"
+"POT-Creation-Date: 2021-04-26 15:42-0300\n"
 "PO-Revision-Date: 2017-09-29 23:25-0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -214,7 +214,7 @@ msgid "Welcome to yet another microblog!"
 msgstr "Bienvenido a Microblog"
 
 #: app/templates/login.html:8
-msgid "Only fooling around? Try \"visitante\" for both username and password"
+msgid "Only a quick registration needed!"
 msgstr ""
 
 #: app/templates/login.html:18
@@ -278,4 +278,7 @@ msgstr "Dejar de seguir"
 
 #~ msgid "Next results"
 #~ msgstr "Resultados próximos"
+
+#~ msgid "Only fooling around? Try \"visitante\" for both username and password"
+#~ msgstr ""
 
